@@ -1,0 +1,28 @@
+<section class="container">
+  <table>
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>Telefone</th>
+        <th>E-mail</th>
+        <th>Nota</th>
+        <th>Ações</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr ng-repeat="contato in vm.contacts | orderBy: $index">
+        <td>{{contato.name}}</td>
+        <td>{{contato.phone}}</td>
+        <td>{{contato.email}}</td>
+        <td>{{contato.note}}</td>
+        <td>
+          <a
+            class="button button-outline button-small"
+            ng-href="#/contato/{{contato._id}}"
+            title="Visualizar Contato">visualizar</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</section>

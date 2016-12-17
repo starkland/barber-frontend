@@ -1,0 +1,33 @@
+<section class="container">
+  <header>
+    <button ng-click="vm.login.facebook()">
+      Login com Facebook
+    </button>
+
+    <button ng-click="vm.login.google()">
+      Login com Google
+    </button>
+  </header>
+
+  <aside ng-if="vm.user_info">
+    <strong>Nome</strong>
+    <p>{{ vm.user_info.name }}</p>
+
+    <strong>E-mail</strong>
+    <p>{{ vm.user_info.email }}</p>
+
+    <strong>Sexo</strong>
+    <p>{{ vm.user_info.gender }}</p>
+
+    <strong>id</strong>
+    <p>{{ vm.user_info.social_id }}</p>
+
+    <strong>social</strong>
+    <p>{{ vm.user_info.social }}</p>
+
+    <strong>Foto do perfil</strong>
+    <figure>
+      <img ng-src="{{ vm.user_info.picture }}" alt="">
+    </figure>
+  </aside>
+</section>

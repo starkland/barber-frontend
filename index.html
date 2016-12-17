@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt" ng-app="App">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <meta name="apple-touch-fullscreen" content="yes" />
+  <meta name="HandheldFriendly" content="true" />
+
+  <meta name="google-signin-client_id" content="490787298478-l9t0v16t4es8h8hnset7h18nab6l1gju.apps.googleusercontent.com">
+
+  <title>Barber Frontend</title>
+
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
+  <!-- Facebook -->
+  <meta property="fb:app_id" content="" />
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://starkland.github.io/barber-frontend">
+  <meta property="og:title" content="Barber Frontend">
+  <meta property="og:image" content="https://starkland.github.io/barber-frontend/fb-share.png">
+  <meta property="og:description" content="Frontend.">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" value="summary">
+  <meta name="twitter:site" value="https://starkland.github.io/barber-frontend">
+  <meta name="twitter:title" content="Minha Agenda">
+  <meta name="twitter:description" content="Aplicação que permite a adição de contatos a uma lista qualquer.">
+  <meta name="twitter:image:src" content="https://starkland.github.io/barber-frontendfb-share.png">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.2.0/milligram.css">
+  <link rel="stylesheet" href="css/main.css">
+
+  <!-- Libs -->
+  <link rel="stylesheet" href="http://victorbjelkholm.github.io/ngProgress/ngProgress.css">
+</head>
+<body ng-class="{ 'offline': !online }">
+
+  <!-- Header -->
+  <div
+    class="container"
+    ng-include
+    src="'views/templates/header.tmpl.html'">
+  </div>
+
+  <main ng-view="" autoscroll="true"></main>
+
+  <!-- Footer -->
+  <div
+    class="container"
+    ng-include
+    src="'views/templates/footer.tmpl.html'">
+  </div>
+
+  <!-- Libs -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular-route.js"></script>
+  <script src="http://victorbjelkholm.github.io/ngProgress/build/ngprogress.js"></script>
+
+  <!-- Facebook -->
+  <script async defer>
+    (function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_US/sdk.js";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+  </script>
+
+  <!-- Google -->
+  <script
+    src="https://apis.google.com/js/platform.js"
+    async
+    defer>
+  </script>
+
+  <!-- Opbeat -->
+  <script
+    src="https://d3tvtfb6518e3e.cloudfront.net/3/opbeat-angular.min.js"
+    async>
+  </script>
+
+  <script>
+    _opbeat = window._opbeat || function() {
+      (window._opbeat.q = window._opbeat.q || []).push(arguments)
+    };
+
+    _opbeat('config', {
+      orgId: '4b348a81e1c34a42b5913e67d300cd43',
+      appId: '18fed1c5b7'
+    });
+  </script>
+
+  <!-- App -->
+  <script src="js/app.js"></script>
+  <script src="js/app.config.js"></script>
+  <script src="js/app.constant.js"></script>
+  <script src="js/app.routes.js"></script>
+
+  <!-- Core -->
+  <script src="js/core/module.js"></script>
+  <script src="js/core/services/auth.js"></script>
+  <script src="js/core/services/api.js"></script>
+  <script src="js/core/services/facebook.js"></script>
+  <script src="js/core/services/google.js"></script>
+  <script src="js/core/interceptors/auth-interceptor.js"></script>
+  <script src="js/core/interceptors/notfound-interceptor.js"></script>
+
+  <!-- Home -->
+  <script src="js/home/module.js"></script>
+  <script src="js/home/controller.js"></script>
+
+  <!-- Contacts -->
+  <script src="js/contacts/module.js"></script>
+  <script src="js/contacts/controller.js"></script>
+
+  <!-- Contact -->
+  <script src="js/contact/module.js"></script>
+  <script src="js/contact/controller.js"></script>
+
+  <!-- Error -->
+  <script src="js/error/module.js"></script>
+  <script src="js/error/controllers/notfound.js"></script>
+  <script src="js/error/controllers/unauthorized.js"></script>
+
+  <!-- Login -->
+  <script src="js/login/module.js"></script>
+  <script src="js/login/controller.js"></script>
+
+  <!-- Cadastro -->
+  <script src="js/cadastro/module.js"></script>
+  <script src="js/cadastro/controller.js"></script>
+</body>
+</html>
